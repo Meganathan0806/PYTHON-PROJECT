@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Success - FABTECH STORE</title>
+  <link rel="stylesheet" href="/static/successcart.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>✅ Purchase Successful!</h2>
+    <p>Thank you for shopping with FABTECH STORE.</p>
+
+    <div id="purchasedItems" class="items-container"></div>
+
+    <div class="back-btn">
+      <a href="/dashboard" class="btn">← Back to Dashboard</a>
+    </div>
+  </div>
+
+  <script>
+    function loadPurchasedItems() {
+      const items = JSON.parse(localStorage.getItem("buy-now")) || [];
+      const container = document.getElementById("purchasedItems");
+
+      if (items.length === 0) {
+        container.innerHTML = "<p>No items found.</p>";
+        return;
+      }
+
+      items.forEach(item => {
+        const itemDiv = document.createElement("div");
+        itemDiv.className = "item";
+
+        itemDiv.innerHTML = `
+          <img src="${item.image}" alt="${item.name}" />
+          <div>
+            <h3>${item.name}</h3>
+            <p><strong>Price:</strong> ₹${item.price}</p>
+            <p><strong>Quantity:</strong> ${item.quantity}</p>
+          </div>
+        `;
+        container.appendChild(itemDiv);
+      });
+
+      localStorage.removeItem("buy-now"); // Clear purchased items after showing
+    }
+
+    window.onload = loadPurchasedItems;
+  </script>
+
+</body>
+</html>

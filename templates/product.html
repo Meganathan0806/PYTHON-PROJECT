@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ name }}</title>
+    <link rel="stylesheet" href="/static/product.css">
+</head>
+<body>
+    <div class="product-container">
+        <img src="{{ image }}" alt="{{ name }}">
+        <h1>{{ name }}</h1>
+        <p class="price">₹{{ price }}</p>
+
+        <form action="/buy-now" method="POST">
+            <input type="hidden" name="name" value="{{ name }}">
+            <input type="hidden" name="price" value="{{ price }}">
+            <input type="hidden" name="image" value="{{ image }}">
+            <button type="submit">Buy Now</button>
+        </form>
+        
+        <button onclick="addToCart('{{ name }}', { price }, '{{ image }}')">Add to Cart</button>
+    </div>
+
+    <script>
+        function addToCart(name, price, image) {
+            // Handle cart logic here or redirect to /cart if already implemented
+            alert(name + " added to cart!");
+        }
+    </script>
+</body>
+</html>

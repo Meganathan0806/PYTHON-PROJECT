@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Commerce Dashboard</title>
+    <link rel="stylesheet" href="/static/dashboard.css">
+    <link rel="stylesheet" href="/templates/cart.html">
+
+   
+</head>
+<body>
+<header>
+    <h3>WELCOME TO  FABTECH STORE</h3>
+</header>
+<nav>
+    <div>
+        <a href="#" onclick="goHome()">Home</a>
+        <a href="#" onclick="showCategorySelect()">Categories</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+    <div class="dropdown" id="categorySelect">
+        <select onchange="showCategory(this.value)">
+            <option value="">Select Category</option>
+            <option value="dress">Dress</option>
+            <option value="mobile">Mobile</option>
+            <option value="laptop">Laptop</option>
+        </select>
+    </div>
+    <div class="cart" onclick="showCartPage()">
+        🛒 Cart <span class="cart-count" id="cartCount">0</span>
+    </div>
+</nav>
+
+  
+
+
+    <!-- Product Items -->
+<div class="items" id="dress">
+
+
+
+    
+  
+
+
+
+
+    <div class="item">
+    <img src="/static/image/makm-photography-PhUMP9lsNjI-unsplash.jpg" alt="">
+    <p>Blazar  - ₹499</p>
+    <form action="/buy-now" method="POST">
+        <input type="hidden" name="name" value="Blazar">
+        <input type="hidden" name="price" value="499">
+        <input type="hidden" name="image" value="/static/image/makm-photography-PhUMP9lsNjI-unsplash.jpg">
+
+ <button type="submit">Buy Now</button>
+
+    </form>
+    
+     <button onclick="addToCart('Blazar',    499,   '/static/image/makm-photography-PhUMP9lsNjI-unsplash.jpg')">Add to Cart</button>
+
+
+
+     
+
+</div>
+
+     <div class="item">
+    <img src="/static/image/cristofer-maximilian-AqLIkOzWDAk-unsplash.jpg" alt="">
+    <p>Blue Tshirt  - ₹599</p>
+    <form action="/buy-now" method="POST">
+        <input type="hidden" name="name" value="Blue Tshirt">
+        <input type="hidden" name="price" value="599">
+        <input type="hidden" name="image" value="/static/image/cristofer-maximilian-AqLIkOzWDAk-unsplash.jpg">
+        <button  type="submit">Buy Now</button>
+    </form>
+   <button onclick="addToCart('Blue Tshirt',    599,   '/static/image/cristofer-maximilian-AqLIkOzWDAk-unsplash.jpg')">Add to Cart</button>
+
+</div> 
+ <div class="item">
+    <img src="/static/image/luis-quintero-3qqiMT2LdR8-unsplash.jpg" alt="">
+    <p>Black Tshirt - ₹699</p>
+    <form action="/buy-now" method="POST">
+        <input type="hidden" name="name" value="Black Tshirt">
+        <input type="hidden" name="price" value="699">
+        <input type="hidden" name="image" value="/static/image/luis-quintero-3qqiMT2LdR8-unsplash.jpg">
+        <button type="submit">Buy Now</button>
+    </form>
+   <button onclick="addToCart('Black Tshirt',    699,   '/static/image/luis-quintero-3qqiMT2LdR8-unsplash.jpg')">Add to Cart</button>
+    
+    
+</div>
+ <div class="item">
+    <img src="/static/image/mediamodifier-7cERndkOyDw-unsplash.jpg" alt="">
+    <p>Polo  T-Shirt - ₹999</p>
+    <form action="/buy-now" method="POST">
+        <input type="hidden" name="name" value="Polo T-Shirt">
+        <input type="hidden" name="price" value="999">
+        <input type="hidden" name="image" value="/static/image/mediamodifier-7cERndkOyDw-unsplash.jpg">
+        <button type="submit">Buy Now</button>
+    </form>
+   <button onclick="addToCart('Polo Tshirt',    999,   '/static/image/mediamodifier-7cERndkOyDw-unsplash.jpg')">Add to Cart</button>
+  
+</div>
+
+
+
+
+<div class="item">
+    <img src="/static/image/benjamin-r-iNvK2Xmpx8o-unsplash.jpg" alt="">
+    <p>Combo Shirt - ₹1299</p>
+    <form action="/buy-now" method="POST">
+        <input type="hidden" name="name" value="Combo  Shirt">
+        <input type="hidden" name="price" value="1299">
+        <input type="hidden" name="image" value="/static/image/benjamin-r-iNvK2Xmpx8o-unsplash.jpg">
+        <button type="submit">Buy Now</button>
+    </form>
+   <button onclick="addToCart('Combo Shirt',   12999,   '/static/image/benjamin-r-iNvK2Xmpx8o-unsplash.jpg')">Add to Cart</button>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="items" id="mobile">
+
+     <div class="item">
+    <img src="/static/image/daniel-romero-aiUAxBNe3Xk-unsplash.jpg" alt="">
+    <p>Samsung  - ₹10,699</p>
+    <form action="/buy-now" method="POST">
+        <input type="hidden" name="name" value="Samsung">
+        <input type="hidden" name="price" value="10,699">
+        <input type="hidden" name="image" value="/static/image/daniel-romero-aiUAxBNe3Xk-unsplash.jpg">
+        <button type="submit">Buy Now</button>
+    </form>
+   <button onclick="addToCart('Samsung',   10699,   '/static/image/daniel-romero-aiUAxBNe3Xk-unsplash.jpg')">Add to Cart</button>
+    
+</div>
+
+ <div class="item">
+    <img src="/static/image/appshunter-io-gh3ZYeUZyYU-unsplash.jpg" alt="">
+    <p>Realme 1plus - ₹15,999</p>
+    <form action="/buy-now" method="POST">
+        <input type="hidden" name="name" value="Realme 1plus">
+        <input type="hidden" name="price" value="18,999">
+        <input type="hidden" name="image" value="/static/image/appshunter-io-gh3ZYeUZyYU-unsplash.jpg">
+        <button type="submit">Buy Now</button>
+    </form>
+   <button onclick="addToCart('Realme 1plus',   15999,   '/static/image/appshunter-io-gh3ZYeUZyYU-unsplash.jpg')">Add to Cart</button>
+    
+</div>
+
+     <div class="item">
+    <img src="/static/image/jonas-lee-o6elTKWZ5bI-unsplash.jpg" alt="">
+    <p>Poco - ₹20,600</p>
+    <form action="/buy-now" method="POST">
+        <input type="hidden" name="name" value="Poco">
+        <input type="hidden" name="price" value="20,600">
+        <input type="hidden" name="image" value="/static/image/jonas-lee-o6elTKWZ5bI-unsplash.jpg">
+        <button type="submit">Buy Now</button>
+    </form>
+   <button onclick="addToCart('Poco',   20600,   '/static/image/jonas-lee-o6elTKWZ5bI-unsplash.jpg')">Add to Cart</button>
+    
+</div>
+
+     <div class="item">
+    <img src="/static/image/dennis-brendel-YLNMXzXk8zs-unsplash.jpg" alt="">
+    <p>Apple iphone 16pro - ₹85,779</p>
+    <form action="/buy-now" method="POST">
+        <input type="hidden" name="name" value="Apple iphone 16pro">
+        <input type="hidden" name="price" value="85,799">
+        <input type="hidden" name="image" value="/static/image/dennis-brendel-YLNMXzXk8zs-unsplash.jpg">
+        <button type="submit">Buy Now</button>
+    </form>
+   <button onclick="addToCart('Apple iphone 16pro',   85799,   '/static/image/dennis-brendel-YLNMXzXk8zs-unsplash.jpg')">Add to Cart</button>
+    
+</div>
+
+
+ 
+
+
+  <div class="item">
+    <img src="/static/image/saif71-com--G28lojV0gk-unsplash.jpg" alt="">
+    <p>Lava - ₹12,779</p>
+    <form action="/buy-now" method="POST">
+        <input type="hidden" name="name" value="Lava">
+        <input type="hidden" name="price" value="12,799">
+        <input type="hidden" name="image" value="/static/image/saif71-com--G28lojV0gk-unsplash.jpg">
+        <button type="submit">Buy Now</button>
+    </form>
+   <button onclick="addToCart('Lava',   12799,   '/static/image/saif71-com--G28lojV0gk-unsplash.jpg')">Add to Cart</button>
+   
+</div>
+
+</div>
+
+<div class="items" id="laptop">
+     <div class="item">
+    <img src="/static/image/moritz-kindler-B3NfR9ccC68-unsplash.jpg" alt="">
+    <p>Lenovo - ₹45,677</p>
+    <form action="/buy-now" method="POST">
+        <input type="hidden" name="name" value="Lenovo">
+        <input type="hidden" name="price" value="45,677">
+        <input type="hidden" name="image" value="/static/image/moritz-kindler-B3NfR9ccC68-unsplash.jpg">
+        <button type="submit">Buy Now</button>
+    </form>
+   <button onclick="addToCart('Lenovo',   45677,   '/static/image/moritz-kindler-B3NfR9ccC68-unsplash.jpg')">Add to Cart</button>
+    
+    
+</div>
+
+     <div class="item">
+    <img src="/static/image/nafis-al-sadnan-wVDmX51BNZ4-unsplash.jpg" alt="">
+    <p>Dell - ₹55,776</p>
+    <form action="/buy-now" method="POST">
+        <input type="hidden" name="name" value="Dell">
+        <input type="hidden" name="price" value="55,779">
+        <input type="hidden" name="image" value="/static/image/nafis-al-sadnan-wVDmX51BNZ4-unsplash.jpg">
+        <button type="submit">Buy Now</button>
+    </form>
+   <button onclick="addToCart('Dell',   55776,   '/static/image/nafis-al-sadnan-wVDmX51BNZ4-unsplash.jpg')">Add to Cart</button>
+   
+    
+</div> 
+ <div class="item">
+    <img src="/static/image/boliviainteligente-vuXB9cnf1Ts-unsplash.jpg" alt="">
+    <p>Acer - ₹66,770</p>
+    <form action="/buy-now" method="POST">
+        <input type="hidden" name="name" value="Acer">
+        <input type="hidden" name="price" value="66,770">
+        <input type="hidden" name="image" value="/static/image/boliviainteligente-vuXB9cnf1Ts-unsplash.jpg">
+        <button type="submit">Buy Now</button>
+    </form>
+   <button onclick="addToCart('Acer',   66770,   '/static/image/boliviainteligente-vuXB9cnf1Ts-unsplash.jpg')">Add to Cart</button>
+
+</div>
+
+     <div class="item">
+    <img src="/static/image/maxim-hopman-Hin-rzhOdWs-unsplash.jpg" alt="">
+    <p>Apple MacBook - ₹89,566</p>
+    <form action="/buy-now" method="POST">
+        <input type="hidden" name="name" value="Apple MacBook">
+        <input type="hidden" name="price" value="89,566">
+        <input type="hidden" name="image" value="/static/image/maxim-hopman-Hin-rzhOdWs-unsplash.jpg">
+        <button type="submit">Buy Now</button>
+    </form>
+   <button onclick="addToCart('Apple MacBook',   89566,   '/static/image/maxim-hopman-Hin-rzhOdWs-unsplash.jpg')">Add to Cart</button>
+    
+    
+</div>
+
+
+ <div class="item">
+    <img src="/static/image/ales-nesetril-Im7lZjxeLhg-unsplash.jpg" alt="">
+    <p>HP - ₹82,566</p>
+    <form action="/buy-now" method="POST">
+        <input type="hidden" name="name" value="HP">
+        <input type="hidden" name="price" value="82,566">
+        <input type="hidden" name="image" value="/static/image/ales-nesetril-Im7lZjxeLhg-unsplash.jpg">
+        <button type="submit">Buy Now</button>
+    </form>
+   <button onclick="addToCart('HP',   82566,   '/static/image/ales-nesetril-Im7lZjxeLhg-unsplash.jpg')">Add to Cart</button>
+    
+    
+</div>
+
+
+
+</div>
+ <div class="slides">
+        <img src="/static/image/img2.png" alt="">
+        <img src="/static/image/img4.png" alt="">
+        <img src="/static/image/maxim-hopman-Hin-rzhOdWs-unsplash.jpg" alt="">
+        <img src="/static/image/daniel-romero-q-RQba-XCgU-unsplash.jpg" alt="">
+    </div>
+</div>
+</div>
+
+    <!-- Add more mobiles similarly -->
+
+<!-- 🔥 Offers Section -->
+<section class="offers">
+    <h2>🔥 Special Offers</h2>
+    <div class="offers-container">
+        <div class="offer-card">
+            <img src="/static/image/boys.jpg" alt="">
+            <h3>Flat 30% Off on Dresses</h3>
+            <p>Limited time offer. Don't miss out!</p>
+        </div>
+        <div class="offer-card">
+            <img src="/static/image/dhruv-vishwakarma-eRZXC48gllU-unsplash.jpg" alt="">
+            <h3>Buy 1 Get 1 on Mobiles</h3>
+            <p>Exciting deals on select mobile phones.</p>
+        </div>
+        <div class="offer-card">
+            <img src="/static/image/boliviainteligente-vuXB9cnf1Ts-unsplash.jpg" alt="">
+            <h3>Save ₹5000 on Laptops</h3>
+            <p>Top brands with amazing discounts!</p>
+        </div>
+    </div>
+</section>
+
+<!-- 💥 Discounts Section -->
+<section class="discounts">
+    <h2>💥 Today's Discounts</h2>
+    <div class="discounts-container">
+        <div class="discount-card">
+            <img src="/static/image/moritz-kindler-B3NfR9ccC68-unsplash.jpg" alt="">
+            <h3>20% Off on Laptop Accessories</h3>
+            <p>Upgrade your setup at a lower cost today!</p>
+        </div>
+        <div class="discount-card">
+            <img src="/static/image/dennis-brendel-YLNMXzXk8zs-unsplash.jpg" alt="">
+            <h3>₹1000 Off on Selected Mobiles</h3>
+            <p>Offer valid till midnight. Hurry up!</p>
+        </div>
+        <div class="discount-card">
+            <img src="/static/image/nimble-made-2yJFGX0tB-U-unsplash.jpg" alt="">
+            <h3>Extra 10% Off on Party Wear</h3>
+            <p>Dress to impress with discounts!</p>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- 🆕 Latest Collections Section -->
+<section class="latest">
+    <h2>🆕 Latest Collections</h2>
+    <div class="latest-container">
+        <div class="latest-card">
+            <img src="/static/image/makm-photography-PhUMP9lsNjI-unsplash.jpg" alt="">
+            <h3>Trendy Summer Dress</h3>
+            <p>₹799 - Comfortable and stylish for summer outings.</p>
+            <button onclick="addToCart('Trendy Summer Dress',   799,   '/static/image/makm-photography-PhUMP9lsNjI-unsplash.jpg')">Add to Cart</button>
+   
+        </div>
+        <div class="latest-card">
+            <img src="/static/image/andrey-matveev-b7kuZqePwVU-unsplash.jpg" alt="">
+            <h3>SuperPhone X2 Mobile </h3>
+            <p>₹23,999 - Fast, sleek and powerful for everyday use.</p>
+            <button onclick="addToCart('SuperPhone X2 Mobile',   23999,   '/static/image/andrey-matveev-b7kuZqePwVU-unsplash.jpg')">Add to Cart</button>
+        </div>
+        <div class="latest-card">
+            <img src="/static/image/andrey-matveev-8xQZ3ptI-2I-unsplash.jpg" alt="">
+            <h3>Ultra Slim Laptop</h3>
+            <p>₹54,999 - Lightweight performance laptop for professionals.</p>
+             <button onclick="addToCart('Ultra Slim Laptop',   54999,   '/static/image/andrey-matveev-8xQZ3ptI-2I-unsplash.jpg')">Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+<!-- 🌟 Special Items -->
+<section id="special">
+    <h2>🌟 Our Special Items 🌟</h2>
+    <div class="special-items-container">
+        <div class="special-item">
+            <img src="/static/image/nick-de-partee-5DLBoEX99Cs-unsplash.jpg" alt="">
+            <h3>Latest Dress</h3>
+            <p>₹499</p>
+            <button onclick="addToCart('Latest Dress',   499,   '/static/image/nick-de-partee-5DLBoEX99Cs-unsplash.jpg')">Add to Cart</button>
+           
+        </div>
+        <div class="special-item">
+            <img src="/static/image/andrey-matveev-b7kuZqePwVU-unsplash.jpg" alt="">
+            <h3>Mobiles</h3>
+            <p>₹19,999</p>
+           <button onclick="addToCart('Mobiles',   19999,   '/static/image/andrey-matveev-b7kuZqePwVU-unsplash.jpg')">Add to Cart</button>
+            
+        </div>
+        <div class="special-item">
+            <img src="/static/image/maxim-hopman-Hin-rzhOdWs-unsplash.jpg" alt="">
+            <h3>Laptop</h3>
+            <p>₹79,799</p>
+          <button onclick="addToCart(' Laptop',   39799,   '/static/image/maxim-hopman-Hin-rzhOdWs-unsplash.jpg')">Add to Cart</button>
+          
+        </div>
+    </div>
+</section>
+
+
+
+<!-- 📦 Product Categories -->
+<div class="items" id="laptop">
+    <div class="item">
+        <img src="/static/image/anete-lusina-zwsHjakE_iI-unsplash.jpg" alt="">
+        <p> Lenovo - ₹45,000</p>
+    <button onclick="addToCart(' Lenovo',   45000,   '/static/image/anete-lusina-zwsHjakE_iI-unsplash.jpg')">Add to Cart</button>
+    </div>
+    <!-- Add more laptops similarly -->
+</div>
+
+
+
+<!-- Footer -->
+<footer style="background-color:#333; color:#fff; text-align:center; padding:20px; margin-top:30px;">
+    <p>&copy; 2025 FABTECH STORE. All rights reserved.</p>
+    <p>Contact :  <a href="mailto:bmeganathan0806@gmail.com" style="color:#4dc3ff;">bmeganathan0806@gmail.com</a></p>
+    <img class="social" src="/static/image/facebook-icon.png" alt="">
+    <img class="social" src="/static/image/google+.png" alt="">
+<img class="social" src="/static/image/twitter-icon.png" alt="">
+<img class="social"  src="/static/image/linkedIn.png" alt="">
+</footer>
+
+
+
+<script src="/static/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+}
+
+
+header {
+    background-color: #1e1e2f;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #27293d;
+    color: white;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #ffffff;
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #4dc3ff;
+}
+
+.dropdown select {
+    padding: 6px 10px;
+    font-size: 14px;
+    margin-left: 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+.cart {
+    cursor: pointer;
+    background-color: #4dc3ff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: black;
+    transition: background 0.3s;
+}
+
+.cart:hover {
+    background-color: #35a7d0;
+}
+
+.cart-count {
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    padding: 2px 8px;
+    margin-left: 6px;
+    font-size: 14px;
+}
+
+/* ----- Slide Carousel ----- */
+.slides {
+    position: relative;
+    max-width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slides img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slides img.active {
+    opacity: 1;
+}
+
+
+
+
+/* Carousel Products */
+.carousel {
+    padding: 20px;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.item:hover {
+    transform: scale(1.03);
+}
+
+.item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.item p {
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+.item button {
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.item button:hover {
+    background-color: #0c70d4;
+}
+
+/* Offers Section */
+.offers, .discounts, .latest, #special {
+    background-color: #fff;
+    margin: 30px 0;
+    padding: 20px;
+}
+
+
+
+
+
+.offers h2, .discounts h2, .latest h2, #special h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: #333;
+}
+
+.offers-container,
+.discounts-container,
+.latest-container,
+.special-items-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.offer-card,
+.discount-card,
+.latest-card,
+.special-item {
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    width: 260px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.offer-card:hover,
+.discount-card:hover,
+.latest-card:hover,
+.special-item:hover {
+    transform: translateY(-5px);
+}
+
+.offer-card img,
+.discount-card img,
+.latest-card img,
+.special-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.offer-card h3,
+.discount-card h3,
+.latest-card h3,
+.special-item h3 {
+    margin: 10px 0 5px;
+}
+
+.offer-card p,
+.discount-card p,
+.latest-card p,
+.special-item p {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.778);
+    font-weight: 475;
+}
+
+.special-item button,
+.latest-card button {
+    margin-top: 10px;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.special-item button:hover,
+.latest-card button:hover {
+    background-color: #005fa3;
+}
+
+/* Footer */
+footer {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.social {
+  width: 45px;
+  
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.social:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* Optional: Center in footer */
+.footer {
+  background-color: #222;
+  padding: 20px 0;
+  text-align: center;
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .items, 
+    .offers-container, 
+    .discounts-container, 
+    .latest-container, 
+    .special-items-container {
+        grid-template-columns: 1fr;
+    }
+    .slides img {
+        max-height: 220px;
+    }
+}

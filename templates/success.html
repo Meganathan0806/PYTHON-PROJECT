@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Purchase Successful</title>
+    <link rel="stylesheet" href="/static/success.css">
+</head>
+<body>
+    <div class="success-container">
+        <h1>🎉 Purchase Successful!</h1>
+        {% if product %}
+        <div class="product-details">
+            <img src="{{ product.image }}" alt="{{ product.name }}">
+            <h2>{{ product.name }}</h2>
+            <p>Price: ₹{{ product.price }}</p>
+        </div>
+        {% else %}
+        <p>No product information found.</p>
+        {% endif %}
+
+        <a href="{{ url_for('dashboard') }}" class="back-button">← Back to Dashboard</a>
+    </div>
+</body>
+</html>

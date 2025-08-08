@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "name": "fabtech-store-frontend",
+  "public": true,
+  "builds": [
+    { "src": "index.html", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/", "dest": "index.html" },
+    { "src": "/register", "dest": "register.html" },
+    { "src": "/login", "dest": "login.html" },
+    { "src": "/dashboard", "dest": "dashboard.html" },
+    { "src": "/cart", "dest": "cart.html" },
+    { "src": "/successcart", "dest": "successcart.html" },
+    { "src": "/success", "dest": "success.html" },
+    { "src": "/product", "dest": "product.html" }
+  ]
+}
